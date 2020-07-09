@@ -27,13 +27,19 @@ int obtengoIdentificador(jugador a);
 int obtengoCedula(jugador a);
 
 //obtengo nombre
-int obtengoNombre(jugador a);
+void obtengoNombre(jugador a,string &nombre);
 
 //obtengo apellido
-int obtengoApellido(jugador a);
+int obtengoApellido(jugador a,string &apellido);
 
 //obtengo direccion
-int obtengoDireccion(jugador a);
+int obtengoDireccion(jugador a,string &direccion);
+
+//obtengo cantidad de partidas jugadas
+int obtengoCantidadJugadas(jugador a);
+
+//obtengo cantidad de partidas jugadas
+int obtengoCantidadJugadas(jugador a);
 
 // verifico si dos jugadores son iguales
 bool sonIguales(jugador a,jugador b);

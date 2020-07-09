@@ -1,40 +1,78 @@
 
 #include "jugador.h"
 
-
-//crear asistente
-void crearAsistente(asistente &a,int d,int b, int c)
+//crear jugador
+void crearAsistente(jugador &a,int ident,int ci,string nombre,string apellido,string dir ,int cantidadP, int cantidadG)
 {
-    a.cedula=b;
-    a.numero=d;
-    a.edad=c;
+    a.identificador=ident;
+    a.apellido=apellido;
+    a.cedula=ci;
+    a.direccion=dir;
+    a.nombre=nombre;
+    a.partidasDisputadas=cantidadP;
+    a.partidasGanadas=cantidadG;
 }
-//imprimir asistente
-void mostrarAsistente(asistente a)
+
+//imprimir jugador
+void mostrarJugador(jugador a)
 {
-    printf("Numero:%d  Cedula :%d  Edad:%d",a.numero, a.cedula, a.edad);
+    printf("Identificador:%d\nCedula:%d",a.identificador, a.cedula);
+    printf("\nNombre:");
+    mostrarString(a.nombre);
+    printf("\nApellido:");
+    mostrarString(a.apellido);
+    printf("\nDireccion:");
+    mostrarString(a.direccion);
+    printf("Patidas jugadas:%d\nPartidas ganadas:%d",a.partidasDisputadas, a.partidasGanadas);
 }
 
 // devuelvo numero
-int obtengoNumero(asistente a)
+int obtengoIdentificador(jugador a)
 {
-    return a.numero;
+    return a.identificador;
 }
 
 // devuelvo la cedula
-int obtengoCedula(asistente a)
+int obtengoCedula(jugador a)
 {
     return a.cedula;
 }
 
-//obtengo edad
-int obtengoEdad(asistente a)
+//obtengo nombre
+void obtengoNombre(jugador a,string &nombre)
 {
-    return a.edad;
+    strcop(a.nombre, nombre);
 }
 
-// verifico si dos asistentes son iguales
-bool sonIguales(asistente a,asistente b)
+//obtengo apellido
+int obtengoApellido(jugador a,string &apellido)
 {
-    return (a.cedula==b.cedula);
+    strcop(a.apellido, apellido);
 }
+
+//obtengo direccion
+int obtengoDireccion(jugador a,string &direccion)
+{
+    strcop(a.direccion, direccion);
+}
+
+//obtengo cantidad de partidas jugadas
+int obtengoCantidadJugadas(jugador a)
+{
+    return a.partidasDisputadas;
+}
+
+//obtengo cantidad de partidas jugadas
+int obtengoCantidadGanadas(jugador a)
+{
+    return a.partidasGanadas;
+}
+
+
+
+// verifico si dos jugadores son iguales
+bool sonIguales(jugador a,jugador b)
+{
+    return a.cedula==b.cedula;
+}
+
